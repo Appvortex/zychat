@@ -287,25 +287,25 @@ const Contacts = () => {
     }
   };
 
-  // const sendBulkMessage = async (message) => {
-  //   let completedCount = 0;
+  const sendBulkMessage = async (message) => {
+    let completedCount = 0;
 
-  //   for (const iterator of message) {
-  //     try {
-  //       setStartSendMessage(true);
-  //       await api.post("/bulkMessage/send", iterator);
-  //       completedCount++;
-  //       setProgressMessage((completedCount / message.length) * 100);
-  //       await wait(5000);
-  //     } catch (err) {
-  //       toastError(err);
-  //     }
-  //   }
-  // };
+    for (const iterator of message) {
+      try {
+        setStartSendMessage(true);
+        await api.post("/bulkMessage/send", iterator);
+        completedCount++;
+        setProgressMessage((completedCount / message.length) * 100);
+        await wait(5000);
+      } catch (err) {
+        toastError(err);
+      }
+    }
+  };
 
-  // const wait = (milliseconds) => {
-  //   return new Promise((resolve) => setTimeout(resolve, milliseconds));
-  // };
+  const wait = (milliseconds) => {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  };
 
   return (
     <MainContainer className={classes.mainContainer}>
