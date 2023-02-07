@@ -1,12 +1,9 @@
-import { AnyMessageContent } from "@adiwajshing/baileys";
-import fs from "fs";
-import mime from "mime-types";
 import Whatsapp from "../models/Whatsapp";
 import GetWhatsappWbot from "./GetWhatsappWbot";
-import SendWhatsAppMedia, {
-  processAudio,
-  processAudioFile
-} from "../services/WbotServices/SendWhatsAppMedia";
+import SendWhatsAppMedia, { processAudio, processAudioFile } from "../services/WbotServices/SendWhatsAppMedia";
+import mime from "mime-types";
+import fs from "fs";
+import { AnyMessageContent } from "@adiwajshing/baileys";
 
 export type MessageData = {
   number: number | string;
@@ -79,9 +76,12 @@ export const SendMessage = async (
         };
       }
 
-      message = await wbot.sendMessage(jid, {
-        ...options
-      });
+      message = await wbot.sendMessage(
+        jid,
+        {
+          ...options
+        }
+      );
 
       console.log(message);
     } else {
