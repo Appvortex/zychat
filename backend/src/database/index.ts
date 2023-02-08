@@ -43,7 +43,7 @@ const models = [
   Tag,
   TicketTag,
   SettingMessage,
-  MassMessages
+  MassMessages,
 ];
 
 sequelize.addModels(models);

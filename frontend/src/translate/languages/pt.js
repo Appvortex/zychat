@@ -4,7 +4,7 @@ const messages = {
       signup: {
         title: "Cadastre-se",
         toasts: {
-          success: "Usuário criado com sucesso! Faça seu login!",
+          success: "Usuário criado com sucesso! Faça seu login!!!.",
           fail: "Erro ao criar usuário. Verifique os dados informados.",
         },
         form: {
@@ -29,7 +29,7 @@ const messages = {
         },
       },
       copyright: {
-        title: "Zychat",
+        title: "Whaticket",
       },
 
       auth: {

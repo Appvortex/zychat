@@ -22,12 +22,13 @@ export const SendMessage = async (
     const body = `\u200e${messageData.body}`;
     console.log("envio de mensagem");
     if (messageData.mediaPath) {
+
       const media = {
         path: messageData.mediaPath,
         mimetype: mime.lookup(messageData.mediaPath)
       } as Express.Multer.File;
 
-      console.log(media);
+      console.log(media)
       const pathMedia = messageData.mediaPath;
       const typeMessage = media.mimetype.split("/")[0];
       let options: AnyMessageContent;
@@ -76,7 +77,7 @@ export const SendMessage = async (
         };
       }
 
-      message = await wbot.sendMessage(
+       message = await wbot.sendMessage(
         jid,
         {
           ...options
@@ -93,7 +94,7 @@ export const SendMessage = async (
 
     return message;
   } catch (err: any) {
-    console.log(err);
+    console.log(err)
     throw new Error(err);
   }
 };
